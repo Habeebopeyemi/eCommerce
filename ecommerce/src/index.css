@@ -10,3 +10,7 @@
 .navbar_style{
   background-color: green !important; 
 }
+.stocking_text{
+  font-size: 1rem !important;
+  font-weight: 400;
+}
