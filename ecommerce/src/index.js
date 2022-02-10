@@ -6,6 +6,7 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import App from "./App";
 
