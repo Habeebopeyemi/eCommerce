@@ -127,8 +127,24 @@ export default class ShoppingCart extends Component {
   };
   // execute when you increase or decrease your unit of purchase
   getTotalPrice = (quantity, price) => {
-    // console.log(quantity, price);
     return quantity * price;
+  };
+  // execute when the delete icon is clicked
+  deleteHandler = product => {
+    //   cloning the products contained in the state
+    let newProductList = [...this.state.products];
+    //   getting the selected product index
+    let deleteInddex = newProductList.indexOf(product);
+      //   confirming delete a
+       ction
+    if (window.confirm("Did you really wish delete this product?")) {
+      //   deleting the selected product
+      newProductList.splice(deleteInddex, 1);
+      // Updating the state
+      this.setState({
+        products: newProductList,
+      });
+    }
   };
   render() {
     return (
@@ -141,7 +157,8 @@ export default class ShoppingCart extends Component {
                 key={product.id}
                 Product={product}
                 onIncrement={this.incrementHandler}
-                onDecrement={this.decrementHandler}>
+                onDecrement={this.decrementHandler}
+                onDelete={this.deleteHandler}>
                 <button className="btn btn-primary">Buy Now</button>
               </Product>
             );

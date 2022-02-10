@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 export default class Product extends Component {
   state = {
     Product: this.props.Product,
@@ -8,26 +10,33 @@ export default class Product extends Component {
       <div className="col-sm-6 col-md-6 col-lg-6">
         <div className="card m-2">
           <div className="card-body">
-            <div>
-              <div className="float-start">
+            <div className="d-flex justify-content-between border-bottom">
+              <div>
                 <span className="badge bg-success p-2 m-1">
                   #{this.state.Product.id}
                 </span>
                 <span>In stock: {this.state.Product.stock}</span>
               </div>
-              <div className="float-end">
-                <h5 className="stocking_text">
+              <div className="d-flex justify-content-between">
+                <h5 className="stocking_text mb-0">
                   Total Price:
                   <span className="badge bg-success p-2 m-1">
                     ${this.state.Product.totalPrice}
                   </span>
                 </h5>
+                <h5 className="p-1">
+                  <button
+                    className="no-border"
+                    onClick={() => {
+                      this.props.onDelete(this.state.Product);
+                    }}>
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </button>
+                </h5>
               </div>
             </div>
 
-            <h5 className="pt-5 mt-4 border-top">
-              {this.state.Product.productName}
-            </h5>
+            <h5 className="pt-5 mt-2">{this.state.Product.productName}</h5>
             <div>${this.state.Product.price}</div>
           </div>
           <div className="card-footer">
