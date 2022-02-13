@@ -119,7 +119,7 @@ export default class MainContent extends Component {
         <tr key={customer.id}>
           <td>{customer.id}</td>
           <td>
-            <img src={customer.photo} />
+            <img src={customer.photo} alt="photo"/>
             <div>
               {/* <button
                 className="btn btn-sm btn-secondary mt-1"
