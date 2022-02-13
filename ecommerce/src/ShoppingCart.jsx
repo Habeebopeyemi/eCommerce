@@ -72,54 +72,66 @@ export default class ShoppingCart extends Component {
       });
     }
   };
-  componentDidMount() {
-    // making http request using fetch API
-    let asyncRequest = fetch("http://localhost:5000/products", {
+  componentDidMount = setTimeout(async () => {
+    let response = await fetch("http://localhost:5000/products", {
       method: "GET",
     });
-    asyncRequest.then(response => {
-      let loadingStatus = response.status;
-      if (loadingStatus === 200) {
-        this.setState({
-          status: loadingStatus,
-        });
-      }
-      // converting response from json to js object which return new promise
-      let newResponse = response.json()
-      newResponse.then(newproducts => {
-        this.setState({
-          products:newproducts
-        })
-      })
+    let loadingStatus = response.status;
+    if (loadingStatus === 200) {
+      this.setState({
+        status: loadingStatus,
+      });
+    }
+    let newProducts = await response.json();
+    this.setState({
+      products: newProducts,
     });
-  }
+  }, 5000);
+  // componentDidMount() {
+  //   // making http request using fetch API
+  //   let asyncRequest = fetch("http://localhost:5000/products", {
+  //     method: "GET",
+  //   });
+  //   asyncRequest.then(response => {
+  //     let loadingStatus = response.status;
+  //     if (loadingStatus === 200) {
+  //       this.setState({
+  //         status: loadingStatus,
+  //       });
+  //     }
+  //     // converting response from json to js object which return new promise
+  //     let newResponse = response.json()
+  //     // consuming the new response
+  //     newResponse.then(newproducts => {
+  //       this.setState({
+  //         products:newproducts
+  //       })
+  //     })
+  //   });
+  // }
   render() {
     if (this.state.status !== 200) {
-      return <PageLoading
-        image = {this.state.loadingImage}
-      />
+      return <PageLoading image={this.state.loadingImage} />;
     } else {
-       return (
-         <div>
-           <h4 className="container-fluid">Shopping Cart</h4>
-           <div className="row">
-             {this.state.products.map(product => {
-               return (
-                 <Product
-                   key={product.id}
-                   Product={product}
-                   onIncrement={this.incrementHandler}
-                   onDecrement={this.decrementHandler}
-                   onDelete={this.deleteHandler}>
-                   <button className="btn btn-primary">Buy Now</button>
-                 </Product>
-               );
-             })}
-           </div>
-         </div>
-       );
+      return (
+        <div>
+          <h4 className="container-fluid">Shopping Cart</h4>
+          <div className="row">
+            {this.state.products.map(product => {
+              return (
+                <Product
+                  key={product.id}
+                  Product={product}
+                  onIncrement={this.incrementHandler}
+                  onDecrement={this.decrementHandler}
+                  onDelete={this.deleteHandler}>
+                  <button className="btn btn-primary">Buy Now</button>
+                </Product>
+              );
+            })}
+          </div>
+        </div>
+      );
     }
-
-   
   }
 }

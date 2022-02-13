@@ -7,8 +7,8 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: "",
-        message: "",
-      placeholder:"user@gmail.com"
+      message: "",
+      placeholder: "user@gmail.com",
     };
     this.getUsernameHandler = event => {
       this.setState({
@@ -20,6 +20,7 @@ export default class Login extends Component {
         password: event.target.value,
       });
     };
+    
     this.onLoginClicked = () => {
       if (this.state.email === "admin@gmail.com") {
         if (this.state.password === "admin") {
@@ -57,7 +58,7 @@ export default class Login extends Component {
             type="text"
             className="form-control"
             placeholder={this.state.placeholder}
-                    onChange={this.getUsernameHandler}
+            onChange={this.getUsernameHandler}
           />
         </div>
         {/* Email ends here */}
