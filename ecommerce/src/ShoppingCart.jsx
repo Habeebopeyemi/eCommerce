@@ -1,11 +1,92 @@
 import React, { Component } from "react";
 import Product from "./Product";
-import PageLoading from "./LoadingHttp";
+// import PageLoading from "./LoadingHttp";
 export default class ShoppingCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
+      products: [
+    {
+      "id": 1,
+      "productName": "Macbook",
+      "price": 8900,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 2,
+      "productName": "iPhone 6",
+      "price": 1200,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 3,
+      "productName": "Sony Camera",
+      "price": 2100,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 4,
+      "productName": "LG Television",
+      "price": 5000,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 5,
+      "productName": "Hp Elitebook",
+      "price": 4500,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 6,
+      "productName": "iPhone 7",
+      "price": 9600,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 7,
+      "productName": "Oraimo ear bud",
+      "price": 1300,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 8,
+      "productName": "tpLink radio",
+      "price": 3456,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 9,
+      "productName": "SMC router",
+      "price": 2500,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    },
+    {
+      "id": 10,
+      "productName": "RJ 45 connector",
+      "price": 700,
+      "quantity": 0,
+      "stock": 10,
+      "totalPrice": 0
+    }
+  ],
       loadingMessage: "",
       loadingImage: "../../img/icons8-loading-circle.gif",
       status: "",
@@ -72,21 +153,21 @@ export default class ShoppingCart extends Component {
       });
     }
   };
-  componentDidMount = setTimeout(async () => {
-    let response = await fetch("http://localhost:5000/products", {
-      method: "GET",
-    });
-    let loadingStatus = response.status;
-    if (loadingStatus === 200) {
-      this.setState({
-        status: loadingStatus,
-      });
-    }
-    let newProducts = await response.json();
-    this.setState({
-      products: newProducts,
-    });
-  }, 5000);
+  // componentDidMount = setTimeout(async () => {
+  //   let response = await fetch("http://localhost:5000/products", {
+  //     method: "GET",
+  //   });
+  //   let loadingStatus = response.status;
+  //   if (loadingStatus === 200) {
+  //     this.setState({
+  //       status: loadingStatus,
+  //     });
+  //   }
+  //   let newProducts = await response.json();
+  //   this.setState({
+  //     products: newProducts,
+  //   });
+  // }, 5000);
   // componentDidMount() {
   //   // making http request using fetch API
   //   let asyncRequest = fetch("http://localhost:5000/products", {
@@ -109,10 +190,7 @@ export default class ShoppingCart extends Component {
   //     })
   //   });
   // }
-  render() {
-    if (this.state.status !== 200) {
-      return <PageLoading image={this.state.loadingImage} />;
-    } else {
+  render(){
       return (
         <div>
           <h4 className="container-fluid">Shopping Cart</h4>
@@ -134,4 +212,4 @@ export default class ShoppingCart extends Component {
       );
     }
   }
-}
+

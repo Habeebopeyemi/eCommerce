@@ -49,7 +49,7 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div className="col-lg-6 p-3">
+      <div className="col-lg-4 p-3 mx-auto">
         <h4 className="m-1 p-2 border-bottom">Login</h4>
         {/* Email starts here */}
         <div className="form-group form-row">
