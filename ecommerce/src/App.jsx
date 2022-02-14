@@ -16,6 +16,7 @@ export default class App extends Component {
             <Route path="/" element={<ShoppingCart />} />
             <Route path="/CustomersList" element={<CustomersList />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="*" element={<div>No Page Found...</div>} />
           </Routes>
         </Suspense>
       </Router>
