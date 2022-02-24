@@ -4,10 +4,10 @@ export class Navbar extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar_style">
+        <nav className=" navbar navbar-expand-lg navbar-dark bg-dark navbar_style">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/#">
-              My App
+            <a className="navbar-brand nav-brand" href="/#">
+              EKOmmerce
             </a>
             <button
               className="navbar-toggler"
@@ -20,25 +20,31 @@ export class Navbar extends Component {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div
-              className="collapse navbar-collapse"
+              className="collapse navbar-collapse justify-content-end "
               id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul className="navbar-nav mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link">
+                  <Link to="/" className="nav-link-text">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/ShoppingCart" className="nav-link-text">
                     Cart
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/CustomersList" className="nav-link">
+                  <Link to="/CustomersList" className="nav-link-text">
                     Customers
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/Login" className="nav-link">
-                    Sign in
-                  </Link>
+                  <button className="btn bg-success p-1">
+                    <Link to="/Login" className="nav-link-text nav-button-text">
+                      Sign in
+                    </Link>
+                  </button>
                 </li>
-
               </ul>
             </div>
           </div>

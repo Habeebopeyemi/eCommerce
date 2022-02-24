@@ -8,7 +8,24 @@
   background-color: lightblue;
 }
 .navbar_style{
-  background-color: green !important; 
+  background-color: black !important; 
+}
+.nav-link-text{
+  color: gray !important;
+  list-style: none;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.nav-brand{
+  color: WHite !important;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.nav-item{
+  margin-bottom: .5rem;
+}
+.nav-button-text{
+  color: white !important;
 }
 .stocking_text{
   font-size: 1rem !important;
@@ -21,4 +38,9 @@
 .image-container{
   width: 5rem;
   height: 5rem;
+}
+@media only screen and (min-width:990px){
+  .nav-item{
+  margin: 0 .5rem 0 0;
+}
 }

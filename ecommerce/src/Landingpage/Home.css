@@ -1,0 +1,168 @@
+/* header section */
+.welcome-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: start;
+}
+.blue-text {
+  color: blue;
+}
+.welcome-content {
+  margin: 2rem 0;
+}
+input {
+  padding: 0.2rem;
+}
+input:focus {
+  outline: none;
+}
+.d-flex > div {
+  margin: 0 1rem 0 0;
+}
+.button {
+  padding: 0.3rem;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+  color: white;
+  background-color: blue;
+}
+.button:hover {
+  background-color: gray;
+}
+/* purpose section */
+.purpose-section, .footer-section {
+  background-color: rgb(235, 235, 241) !important;
+  margin: 1rem 0;
+}
+
+.purpose-header-text, .footer-text {
+  color: gray;
+  font-size: 1rem;
+}
+.purpose-blockquote {
+  font-family: sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.purpose-grid-card {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 0.4fr 3fr;
+  grid-template-rows: 0.4fr 3fr;
+  grid-template-areas:
+    "picture header header header"
+    ". paragraph paragraph paragraph";
+}
+.purpose-grid-card:hover {
+  background-color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0 8px 30px 1px rgb(31 38 135 / 10%);
+  margin: 0 0 0.5rem 0;
+  transition: 0.2s ease-in-out;
+}
+.purpose-picture-area {
+  grid-area: picture;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.2rem;
+  color: white;
+  border-radius: 50%;
+}
+.purpose-picture-purple {
+  background-color: purple;
+}
+.purpose-picture-red {
+  background-color: red;
+}
+.purpose-header-area {
+  grid-area: header;
+  margin: 0;
+  font-family: sans-serif;
+  align-self: center;
+}
+.purpose-paragraph-area {
+  grid-area: paragraph;
+  padding: 0 1rem 0 0;
+  text-align: start;
+  color: gray;
+}
+/* growth section */
+.growth-picture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.growth-picture-red {
+  background-color: rgb(252, 222, 222);
+  color: red;
+  padding: 0.6rem;
+}
+.growth-picture-purple {
+  background-color: rgb(250, 229, 250);
+  color: purple;
+  padding: 0.6rem;
+}
+.growth-picture-yellow {
+  background-color: rgb(247, 247, 235);
+  color: maroon;
+  padding: 0.6rem;
+}
+.growth-header,
+.future-header {
+  font-family: sans-serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.growth-paragraph,
+.future-paragraph {
+  color: gray;
+}
+.growth-card, .future-card {
+  border: 1px solid rgb(241, 239, 239);
+  border-radius: 1rem;
+}
+.growth-card:hover, .future-card:hover {
+  box-shadow: 0 8px 30px 1px rgb(31 38 135 / 10%);
+  transition: 0.2s ease-in-out;
+}
+/* future section */
+.future-picture {
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.2rem;
+  color: white;
+  border-radius: 50%;
+  background-color: rgb(18, 18, 95);
+  margin: 0 0.5rem 0 0;
+}
+.future-icons{
+  font-size: 2rem;
+}
+.future-icon-purple{
+  color: rgb(110, 88, 238)
+}
+.future-icon-orange{
+  color: orange
+}
+.future-icon-orangered{
+  color: orangered
+}
+.future-icon-blue{
+  color: rgb(78, 186, 223)
+}
+/* purpose section */
+.footer-logo-text{
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0 .8rem 0 0;
+}
+.article-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.next-design{
+  max-width: 350px;
+}

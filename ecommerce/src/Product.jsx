@@ -1,70 +1,78 @@
-import React, { Component } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-export default class Product extends Component {
-  state = {
-    Product: this.props.Product,
-  };
-  render() {
-    return (
-      <div className="col-sm-6 col-md-6 col-lg-6">
-        <div className="card m-2">
-          <div className="card-body">
-            <div className="d-flex justify-content-between border-bottom">
-              <div>
-                <span className="badge bg-success p-2 m-1">
-                  #{this.state.Product.id}
-                </span>
-                <span>In stock: {this.state.Product.stock}</span>
-              </div>
-              <div className="d-flex justify-content-between">
-                <h5 className="stocking_text mb-0">
-                  Total Price:
-                  <span className="badge bg-success p-2 m-1">
-                    ${this.state.Product.totalPrice}
-                  </span>
-                </h5>
-                <h5 className="p-1">
-                  <button
-                    className="no-border"
-                    onClick={() => {
-                      this.props.onDelete(this.state.Product);
-                    }}>
-                    <FontAwesomeIcon icon={faTrashCan} />
-                  </button>
-                </h5>
-              </div>
-            </div>
+import { useNavigate } from "react-router-dom";
 
-            <h5 className="pt-5 mt-2">{this.state.Product.productName}</h5>
-            <div>${this.state.Product.price}</div>
-          </div>
-          <div className="card-footer">
-            <div className="float-start">
-              <span className="badge bg-success m-1">
-                {this.state.Product.quantity}
+const Product = function (props) {
+  let navigate = useNavigate();
+  return (
+    <div className="col-sm-6 col-md-6 col-lg-6">
+      <div className="card m-2">
+        <div className="card-body">
+          <div className="d-flex justify-content-between border-bottom">
+            <div>
+              <span className="badge bg-success p-2 m-1">
+                #{props.Product.id}
               </span>
-              <div className="btn-group">
-                <button
-                  className="btn btn-outline-success"
-                  onClick={() => {
-                    this.props.onIncrement(this.state.Product);
-                  }}>
-                  +
-                </button>
-                <button
-                  className="btn btn-outline-success"
-                  onClick={() => {
-                    this.props.onDecrement(this.state.Product);
-                  }}>
-                  -
-                </button>
-              </div>
+              <span>In stock: {props.Product.stock}</span>
             </div>
-            <div className="float-end">{this.props.children}</div>
+            <div className="d-flex justify-content-between">
+              <h5 className="stocking_text mb-0">
+                Total Price:
+                <span className="badge bg-success p-2 m-1">
+                  ${props.Product.totalPrice}
+                </span>
+              </h5>
+              <h5 className="p-1">
+                <button
+                  className="no-border"
+                  onClick={() => {
+                    props.onDelete(props.Product);
+                  }}>
+                  <FontAwesomeIcon icon={faTrashCan} />
+                </button>
+              </h5>
+            </div>
+          </div>
+
+          <h5 className="pt-5 mt-2">{props.Product.productName}</h5>
+          <div>${props.Product.price}</div>
+        </div>
+        <div className="card-footer">
+          <div className="float-start">
+            <span className="badge bg-success m-1">
+              {props.Product.quantity}
+            </span>
+            <div className="btn-group">
+              <button
+                className="btn btn-outline-success"
+                onClick={() => {
+                  props.onIncrement(props.Product);
+                }}>
+                +
+              </button>
+              <button
+                className="btn btn-outline-success"
+                onClick={() => {
+                  props.onDecrement(props.Product);
+                }}>
+                -
+              </button>
+            </div>
+          </div>
+
+          <div className="float-end">
+            <button
+              onClick={() => {
+                navigate("/Login");
+              }}
+              className="btn btn-primary">
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+export default Product;
