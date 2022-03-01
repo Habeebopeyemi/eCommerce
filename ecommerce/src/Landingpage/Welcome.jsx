@@ -1,16 +1,17 @@
 import React from "react";
-const PageHeader = () => {
+const PageHeader = (props) => {
   return (
-    <div className="d-flex-column mx-1">
+    <div className="welcome-wrapper d-flex flex-column mx-1 flex-sm-row align-items-center">
       <div className="welcome-content">
-        <h3 className="welcome-header">
-          Enjoy your <span className="blue-text">shopping</span> experience with EKOmmerce.
+        <h3 className="welcome-header mb-md-4">
+          Enjoy your <span className="blue-text">shopping</span> experience with
+          EKOmmerce.
         </h3>
-        <p>
-          with EKOmmerce you get the most accurate product you want, with easy carting, payment and stress free
-          service.
+        <p className="p-1 welcome-paragraph p-lg-2">
+          with EKOmmerce you get the most accurate product you want, with easy
+          carting, payment and stress free service.
         </p>
-        <div className="d-flex">
+        <div className="d-flex mt-md-3">
           <div>
             <input type="email" placeholder="Email address" />
           </div>
@@ -19,11 +20,11 @@ const PageHeader = () => {
           </div>
         </div>
       </div>
-      <div className="welcome-image">
+      <div className="welcome-image mx-auto">
         <img
           className="img-fluid"
-          src="../../landingPageResources/taraclark.jpg"
-          alt="shopping"
+          src={props.image.src}
+          alt={props.image.alt}
         />
       </div>
     </div>

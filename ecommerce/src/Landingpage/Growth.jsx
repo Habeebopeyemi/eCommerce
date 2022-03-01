@@ -15,8 +15,8 @@ const GrowthSection = () => {
       <p className="text-center growth-paragraph">
         When you resell besnik, you build trust and increase
       </p>
-      <div>
-        <div className="d-flex flex-column justify-content-center text-center p-2 growth-card mb-3">
+      <div className="growth-card-wrapper d-md-flex">
+        <div className="growth-card d-flex flex-column justify-content-center text-center p-2 growth-card mb-3 m-md-2">
           <picture className="growth-picture mx-auto my-2 growth-picture-purple">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </picture>
@@ -25,7 +25,7 @@ const GrowthSection = () => {
             We present you a proposal and discuss nitty-gritty like
           </p>
         </div>
-        <div className="d-flex flex-column justify-content-center text-center p-2 growth-card mb-3">
+        <div className="growth-card d-flex flex-column justify-content-center text-center p-2 growth-card mb-3 m-md-2">
           <picture className="growth-picture mx-auto my-2 growth-picture-red">
             <FontAwesomeIcon icon={faGear} />
           </picture>
@@ -34,7 +34,7 @@ const GrowthSection = () => {
             Communication protocols apart from engagement models
           </p>
         </div>
-        <div className="d-flex flex-column justify-content-center text-center p-2 growth-card mb-3">
+        <div className="growth-card d-flex flex-column justify-content-center text-center p-2 growth-card mb-3 m-md-2">
           <picture className="growth-picture mx-auto my-2 growth-picture-yellow">
             <FontAwesomeIcon icon={faRocket} />
           </picture>

@@ -5,20 +5,13 @@ const Footer = () => {
     <div className="footer-section mx-1 p-2">
       <div className="border-bottom article-container">
         <article className="mb-2 next-design">
-          <h4 className="mb-3">
-            Next Design
-          </h4>
+          <h4 className="mb-3">Next Design</h4>
           <p className="footer-text text-start">
             The copy warned the little blind text, that where it came from it
             would have been rewritten a thousand times
           </p>
-          <div className="d-flex justify-content-start">
-            <span className="p-1">fb-icon</span>
-            <span className="p-1">tw-icon</span>
-            <span className="p-1">in-icon</span>
-          </div>
         </article>
-        <article>
+        <article className="p-2">
           <h4>Company</h4>
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
@@ -48,7 +41,7 @@ const Footer = () => {
             </li>
           </ul>
         </article>
-        <article>
+        <article className="p-2">
           <h4>Get Help</h4>
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
@@ -68,7 +61,7 @@ const Footer = () => {
             </li>
           </ul>
         </article>
-        <article>
+        <article className="p-2">
           <h4>Support</h4>
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
@@ -88,7 +81,7 @@ const Footer = () => {
             </li>
           </ul>
         </article>
-        <article>
+        <article className="p-2">
           <h4>Contact</h4>
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
@@ -104,9 +97,9 @@ const Footer = () => {
           </ul>
         </article>
       </div>
-      <div className="d-flex justify-content-between p-1">
+      <div className="d-flex justify-content-between mx-4">
         <span>
-          Copyright 2022: 
+          Copyright 2022:
           <a href="http://www.github.com/habeebopeyemi"> Deveeb</a>
         </span>
         <span>Coded by Deveeb</span>
